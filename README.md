@@ -2,14 +2,14 @@
 
 Spring Cloud 微服务商城 + Vue 3 前端，支持购物车、订单、支付宝沙箱支付、微信扫码登录、RabbitMQ 延迟关单等。
 
-> 本仓库为进化版（微服务架构），逐步上传中：前端 → 后端 → SQL。
+> 本仓库为进化版（微服务架构）。
 
 ## 项目结构
 
 ```
 ├── wmall/              # 后端（Spring Cloud 微服务）
 ├── wmall-portal/       # 前端（Vue 3 + Vite + Element Plus）
-├── sql/                # 数据库初始化脚本
+├── mysql/              # 数据库初始化脚本
 ├── scripts/            # natapp 等辅助脚本（仅示例）
 └── README.md
 ```
@@ -43,7 +43,16 @@ Spring Cloud 微服务商城 + Vue 3 前端，支持购物车、订单、支付�
 
 ### 2. 数据库
 
-执行 `sql/` 目录下各库脚本（`wmall-user`、`wmall-item` 等）。
+在 MySQL 中依次执行 `mysql/` 目录下脚本：
+
+| 脚本 | 说明 |
+|------|------|
+| `mysql/nacos.sql` | Nacos 配置中心（默认账号 `nacos` / `nacos`） |
+| `mysql/wmall-user.sql` | 用户库（含演示账号 Jack / Rose，密码 `123`） |
+| `mysql/wmall-item.sql` | 商品库（含 5 条演示商品） |
+| `mysql/wmall-cart.sql` | 购物车库 |
+| `mysql/wmall-trade.sql` | 订单库 |
+| `mysql/wmall-pay.sql` | 支付库 |
 
 ### 3. 本地私密配置
 
@@ -84,7 +93,10 @@ npm run dev
 
 ## 演示账号
 
-SQL 脚本中的演示用户密码均为 `123`（BCrypt 加密存储）。
+| 用户名 | 密码 | 余额 |
+|--------|------|------|
+| Jack | 123 | 10000 元（1000000 分） |
+| Rose | 123 | 10000 元 |
 
 ## License
 
