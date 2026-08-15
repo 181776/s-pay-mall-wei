@@ -1,0 +1,40 @@
+# 根目录 .gitignore（单仓库 monorepo）
+
+# natapp（二进制与真实 token 不提交）
+natapp.exe
+run_natapp.bat
+scripts/run-natapp.bat
+
+# JWT 密钥库
+**/*.jks
+
+# 后端 Java
+**/target/
+*.class
+*.jar
+*.war
+
+# 前端
+node_modules/
+dist/
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+
+# 本地私密配置
+**/application-local.yaml
+
+# 环境变量
+.env
+.env.local
+
+# 超大 SQL 导出（含大量业务数据，改用 sql/ 下按库拆分的小文件）
+mysql/init/hmall.sql
+
+# OS
+.DS_Store
+Thumbs.db
