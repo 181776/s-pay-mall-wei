@@ -38,3 +38,13 @@ mysql/init/hmall.sql
 # OS
 .DS_Store
 Thumbs.db
+
+# 本地中间件/杂项（勿提交）
+*.tar
+nacos/
+ik/
+es.tar
+kibana.tar
+nacos.tar
+advice.txt
+pay.html
