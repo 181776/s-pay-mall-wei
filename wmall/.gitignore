@@ -1,0 +1,17 @@
+# Java
+**/target/
+*.class
+*.jar
+*.war
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# 本地私密配置（各服务 application-local.yaml）
+**/application-local.yaml
+
+# JWT 密钥库
+**/*.jks

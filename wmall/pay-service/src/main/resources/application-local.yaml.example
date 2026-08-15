@@ -1,0 +1,11 @@
+# 复制为 application-local.yaml
+
+app:
+  db:
+    password: your-mysql-password
+
+alipay:
+  app_id: your-alipay-app-id
+  merchant_private_key: your-alipay-merchant-private-key
+  alipay_public_key: your-alipay-public-key
+  notify_url: http://your-natapp-domain/pay-orders/alipay/notify

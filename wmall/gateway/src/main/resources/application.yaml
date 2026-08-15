@@ -1,0 +1,45 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: gateway
+  config:
+    import: optional:classpath:application-local.yaml
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+    gateway:
+      routes:
+        - id: item
+          uri: lb://item-service
+          predicates:
+            - Path=/items/**,/search/**
+        - id: cart
+          uri: lb://cart-service
+          predicates:
+            - Path=/carts,/carts/**
+        - id: user
+          uri: lb://user-service
+          predicates:
+            - Path=/users/**,/addresses/**
+        - id: trade
+          uri: lb://trade-service
+          predicates:
+            - Path=/orders,/orders/**
+        - id: pay
+          uri: lb://pay-service
+          predicates:
+            - Path=/pay-orders,/pay-orders/**,/pay-orders/alipay/notify
+app:
+  jwt:
+    location: classpath:wmall.jks
+    alias: wmall
+    password: your-jks-password
+    tokenTTL: 30m
+  auth:
+    excludePaths:
+      - /search/**
+      - /users/login
+      - /items/**
+      - /pay-orders/alipay/notify
+      - /users/weixin/**

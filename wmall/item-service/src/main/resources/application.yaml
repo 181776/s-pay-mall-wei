@@ -1,0 +1,17 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: item-service
+  config:
+    import: optional:classpath:application-local.yaml
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+app:
+  db:
+    host: 127.0.0.1
+    port: 13306
+    username: root
+    password: your-mysql-password
+    database: wmall-item

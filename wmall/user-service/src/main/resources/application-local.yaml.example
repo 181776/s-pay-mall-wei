@@ -1,0 +1,15 @@
+# 复制本文件为 application-local.yaml，填写本地真实配置。
+# application-local.yaml 已被 .gitignore 忽略，仅用于本机开发。
+
+app:
+  db:
+    password: your-mysql-password
+  jwt:
+    password: your-jks-password
+
+weixin:
+  config:
+    originalid: your-weixin-original-id
+    token: your-weixin-token
+    app-id: your-weixin-app-id
+    app-secret: your-weixin-app-secret
